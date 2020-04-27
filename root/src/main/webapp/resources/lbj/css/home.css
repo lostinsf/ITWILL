@@ -12,30 +12,33 @@
 @CHARSET "UTF-8";
 
 html {
-  background: green;
+  	background: #1f80aa;
 }
 
 #test{
-	width: 20rem;
-	height: 30rem;
-	margin: 5rem auto;
+	width: 10rem;
+	height: 15rem;
+	position:absolute;
+	left: 50%;
+	top: 25%;
+    transform: translate(-50%, -50%);
 }
 
 /*codepen.io*/
 html, body {
-	background: #1f80aa;
 	width: 100vw;
 	height: 100vh;
-	font-size: 12em;
 }
 
 form{
-	left: 50% - 145px;
-	top: 50%;
-}
-fieldset {
 	width: 290px;
 	height: 50px;
+	position:absolute;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+}
+fieldset {
 	padding: 0 0 0 40px;
 	background: #fff;
 	border: none;
