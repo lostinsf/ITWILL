@@ -9,10 +9,10 @@
 		데이터 교환의 표준형식임.
 		데이터가 유효한 데이터인지를 판단 가능
 -->
-<mapper namespace="com.itwill.team1.mapper.MemberMapper">
+<mapper namespace="com.itwill.team1.mappers.memberMapper">
 
 	<select id="selectDao" resultType="string">
-		select * from lbj;
+		select * from db;
 	</select>
 	
 </mapper>

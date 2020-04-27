@@ -2,19 +2,19 @@ package com.itwill.team1.Domain;
 
 public class VO {
 
-	private int idlbj;
+	private int id;
 
-	public int getIdlbj() {
-		return idlbj;
+	public int getId() {
+		return id;
 	}
 
-	public void setIdlbj(int idlbj) {
-		this.idlbj = idlbj;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
 	public String toString() {
-		return "VO [idlbj=" + idlbj + "]";
+		return "VO [id=" + id + "]";
 	}
 	
 	
