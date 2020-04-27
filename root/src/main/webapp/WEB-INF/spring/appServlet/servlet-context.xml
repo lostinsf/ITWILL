@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"
+	>
+
+	<!--
+		제목: 스프링MVC(웹과 관련된 정보:URL 등) 설정 저장하는 XML 파일
+	-->
+	
+	<!-- 1. 모든 controller를 구현할 수 있게 해주는 annotation Tag -->
+	<annotation-driven />
+
+	<!-- 2. 모든 resources(img, css, js, lib) 정보를 저장하는 resources Tag -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- 3. HomeController 호출시, view 이동 경로 및 확장자를 자동으로 처리해주는 bean Tag -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 4. base-package를 저장하는 context Tag-->
+	<context:component-scan base-package="com.itwill.team1" />
+	
+</beans:beans>

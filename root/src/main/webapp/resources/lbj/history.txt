@@ -1,0 +1,57 @@
+/*
+ * 제목: Version Note
+ * 작성자: 이봉주
+ * 관리약자: lbj
+ * 생성일: 2020.04.24
+ * 요약:
+ * - 버전 관리 정리를 위해 날짜별로 히스토리를 적는다.
+ */
+
+----------------------------------------------------------
+Ver 1.0 필수기능 구현
+----------------------------------------------------------
+1일차: 20.04.24
+1. 단위작업(혼자 작업한 내용을 아래에 탭으로 구분해서 정리)
+	src/main/resource/mappers내 membermapper.xml 추가
+		회원정보 기능 생성용
+	webapp/resources내 common 파일 추가
+		자바스크립트
+		스타일
+		아이콘
+2. 통합작업(같이 작업한 내용을 아래에 탭으로 구분해서  정리)
+	통합 스프링 itwill 프로젝트 생성 및 기본 패키지 작업 실시
+		pom.xml내 최신 패키지 정보 반영
+		com.itwill.team1 패키지 추가
+			각 관리약자별로 생성
+				Value Object 관리를 위한 Domain 추가
+				Database Access Object 관리를 위한 Persistence 추가
+				Service Object 관리를 위한 Service 추가
+		src/test내 다양한 test tool 부여
+			ControllerTest.java
+				Controller을 Junit로 확인 가능
+			DAOTest.java
+				DAO 기능이 제대로 작동되는지 Junit로 확인 가능
+			DataSourceTest.java
+				DB소스 사용이 가능한지 Junit로 확인 가능
+			MyBatisTest.java
+				Mybatis 동작이 가능한지 Junit로 확인 가능
+			MySqlConnectionTest.java
+				Mysql 접근이 가능한지 Junit로 확인 가능
+
+3. 커밋작업(gibhub내  commit 등 반영한 작업 정리 )
+	itwill 프로젝트를 소스테스트 gibhub에 root push 반영
+		최초반영으로  등록 완료
+	itwill 프로젝트 개발서버 branch 반영 실시
+		개발서버에서  적용 후 테스트
+			local tomcat 테스트
+			test tool 사용
+
+				
+	
+	
+	
+		
+				
+	
+
+		

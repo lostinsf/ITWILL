@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd"
+	>
+	
+	<!--
+		제목 : 스프링MVC(웹과 관련되지 않은 정보:JDBC 등) 설정 저장하는 XML 파일
+	-->
+	
+	<!-- 1. JDBC 정보내 DB를 연결하는 정보를 자동으로 처리해주는 bean Tag -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+	>
+	
+		<property name="driverClassName"
+			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+	
+		<property name="url"
+			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/db?useSSL=false" />
+	
+		<property name="username" value="db" />
+	
+		<property name="password" value="lostinsf1984@gmail.com" />
+
+	</bean>
+	
+	<!-- 2. JDBC 정보내 DB연동 session유지를 자동으로 처리해주는 bean Tag --> 
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean"
+	>
+	   <property name="dataSource" ref="dataSource" />
+	   
+	   <property name="configLocation" 
+	             value="classpath:/mybatis-config.xml" />
+	
+	   <property name="mapperLocations"
+	             value="classpath:mappers/**/*Mapper.xml" />	   
+	      
+	</bean>
+	
+	<!-- 3. JDBC 정보내 DB연동 session객체내 @Inject를 자동으로 처리해주는 bean Tag --> 
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate"
+		destroy-method="clearCache"
+	>
+
+		<constructor-arg name="sqlSessionFactory"
+			ref="sqlSessionFactory" />
+
+	</bean>
+	
+	<!-- 4. base-package를 저장하는 context Tag-->
+	<context:component-scan base-package="com.itwill.team1.Persistence" />
+
+</beans>
