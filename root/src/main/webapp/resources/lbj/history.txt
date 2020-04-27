@@ -45,6 +45,25 @@ Ver 1.0 필수기능 구현
 		개발서버에서  적용 후 테스트
 			local tomcat 테스트
 			test tool 사용
+			
+2일차: 20.04.27
+1. 단위작업(혼자 작업한 내용을 아래에 탭으로 구분해서 정리)
+	src/main/resource/mappers내 membermapper.xml 수정
+		회원정보 기능 생성용
+2. 통합작업(같이 작업한 내용을 아래에 탭으로 구분해서  정리)
+	통합 스프링 itwill 프로젝트 생성 및 기본 패키지 작업 실시
+		src/main/java 패키지 설정 추가
+			각 VO, DAO,DAOimpl, SO, SOimpl 충돌로 [계정정보]를 추가하여 입력완료
+		src/main/webapp/resource/[계정정보]/home.css 추가
+			구문을 위한 살태 정봐 환경 추가
+3. 커밋작업(gibhub내  commit 등 반영한 작업 정리 )
+	itwill 프로젝트를 소스테스트 gibhub에 root push 2차 반영
+		이전 정보는 지우고 새정보로 업데이트
+	itwill 프로젝트 개발서버 branch 반영 실시
+		개발서버에서  적용 후 테스트
+			commit test
+			pull test
+			push test
 
 				
 	
